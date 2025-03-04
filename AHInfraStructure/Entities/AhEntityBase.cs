@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace AHInfraStructure.Entities
 {
-    internal class AirPortEntity: AhEntityBase
+    internal class AhEntityBase
     {
-        public int Id { get; set; }
-        public string AirPortName { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }
