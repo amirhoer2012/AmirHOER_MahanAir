@@ -11,7 +11,5 @@ namespace Entities.Entities
     {
         public TId Id { get; set; }
         public DateTime LastChangeDate { get; set; }
-
-        public abstract void Update(AhEntityBase<TId> updatedEntity);
     }
 }

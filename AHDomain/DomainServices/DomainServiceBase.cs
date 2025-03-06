@@ -7,8 +7,8 @@ namespace Domain.DomainServices
 {
     public abstract class DomainServiceBase<TModel,TEntity,TId>:IDomainServiceBase<TModel,TId>
     where TModel : ModelBase
-    where TEntity : AhEntityBase
-    where TId :struct
+    where TEntity : AhEntityBase<TId>
+    where TId :struct,IComparable
     {
         private readonly IRepositoryBase<TEntity,TId> repository;
 
@@ -24,7 +24,7 @@ namespace Domain.DomainServices
 
         public TModel Persist(TModel model)
         {
-            return Map(this.repository.SaveAndUpdate(Map(model)));
+            return Map(this.repository.Persist(Map(model)));
         }
 
         public TModel Read(TId id)
