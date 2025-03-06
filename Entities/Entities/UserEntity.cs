@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AHInfraStructure.Entities
+namespace Entities.Entities
 {
-    internal class UserEntity: AhEntityBase
+    public class UserEntity : AhEntityBase<int>
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Family { get; set; }
         public string PhoneNo { get; set; }

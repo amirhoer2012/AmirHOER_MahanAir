@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AHInfraStructure.Entities
+namespace AHApplication.Services
 {
-    internal class AhEntityBase
+    internal class AirPortAppService
     {
-        public DateTime CreationDate { get; set; }
     }
 }

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AHInfraStructure.Entities
+namespace Entities.Entities
 {
-    internal class AirPortEntity: AhEntityBase
+    public class AirPortEntity : AhEntityBase<int>
     {
-        public int Id { get; set; }
         public string AirPortName { get; set; }
     }
 }

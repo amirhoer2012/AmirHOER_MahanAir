@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AHApplication\AHApplication.csproj" />
-    <ProjectReference Include="..\AHDomain\AHDomain.csproj" />
+    <ProjectReference Include="..\AHApplication\Application.csproj" />
+    <ProjectReference Include="..\AHDomain\Domain.csproj" />
+    <ProjectReference Include="..\AHInfraStructure\InfraStructure.csproj" />
   </ItemGroup>
 
 </Project>
