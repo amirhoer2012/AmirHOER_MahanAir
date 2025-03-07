@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities.Entities;
 
-namespace Domain.Contracts.Repositories
+namespace Domain.Repositories
 {
     public interface IRepositoryBase<TEntity, TId>
     where TEntity : AhEntityBase<TId>

@@ -1,7 +1,7 @@
 ﻿using Domain.Enum;
 using Entities.Entities;
 
-namespace AHDomain.Models
+namespace Domain.Models
 {
     public class ReservationModel : ModelBase
     {
@@ -11,21 +11,21 @@ namespace AHDomain.Models
 
         public ReservationModel(ReservationEntity entity)
         {
-            this.Id = entity.Id;
-            this.State = (ReservationState)entity.State;
-            this.CancellationDate = entity.CancellationDate;
-            this.ConfirmationDate = entity.ConfirmationDate;
-            this.Flight = new FlightModel(entity.Flight);
-            this.User = new UserModel(entity.User);
-            this.ReserveDate = entity.ReserveDate;
-            this.SeatQuantity = entity.SeatQuantity;
+            Id = entity.Id;
+            State = (ReservationState)entity.State;
+            CancellationDate = entity.CancellationDate;
+            ConfirmationDate = entity.ConfirmationDate;
+            Flight = new FlightModel(entity.Flight);
+            User = new UserModel(entity.User);
+            ReserveDate = entity.ReserveDate;
+            SeatQuantity = entity.SeatQuantity;
         }
 
         public ReservationModel(UserModel user, FlightModel flight)
         {
-            this.User = user;
-            this.Flight = flight;
-            this.State = ReservationState.Initialized;
+            User = user;
+            Flight = flight;
+            State = ReservationState.Initialized;
         }
 
         #endregion
@@ -34,10 +34,10 @@ namespace AHDomain.Models
         {
             if (ValidateToTempReserve(id, reserveDate, seatQuantity))
             {
-                this.Id = id;
-                this.ReserveDate = reserveDate;
-                this.State = ReservationState.TempReserved;
-                this.SeatQuantity = seatQuantity;
+                Id = id;
+                ReserveDate = reserveDate;
+                State = ReservationState.TempReserved;
+                SeatQuantity = seatQuantity;
             }
             else
             {
@@ -49,8 +49,8 @@ namespace AHDomain.Models
         {
             if (ValidateToConfirmReserve(confirmationDate))
             {
-                this.ConfirmationDate = confirmationDate;
-                this.State = ReservationState.Reserved;
+                ConfirmationDate = confirmationDate;
+                State = ReservationState.Reserved;
             }
             else
             {
@@ -62,8 +62,8 @@ namespace AHDomain.Models
         {
             if (ValidateToCancel(cancellationDate))
             {
-                this.CancellationDate = cancellationDate;
-                this.State = ReservationState.Cancelled;
+                CancellationDate = cancellationDate;
+                State = ReservationState.Cancelled;
             }
             else
             {
@@ -87,15 +87,15 @@ namespace AHDomain.Models
         private bool ValidateToTempReserve(long id, DateTime reserveDate, int seatQuantity = 1)
         {
             return id > 0 && seatQuantity > 0 &&
-                   this.State == ReservationState.Initialized &&
+                   State == ReservationState.Initialized &&
                    ValidateDate(reserveDate);
         }
 
         private bool ValidateToConfirmReserve(DateTime confirmationDate)
         {
             return ValidateDate(confirmationDate) &&
-                   confirmationDate > this.ReserveDate &&
-                   this.State == ReservationState.TempReserved &&
+                   confirmationDate > ReserveDate &&
+                   State == ReservationState.TempReserved &&
                    confirmationDate.AddHours(VALID_RESERVATION_PERIOD_BEFORE_FLIGHT) < confirmationDate;
         }
 

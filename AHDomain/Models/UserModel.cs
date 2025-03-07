@@ -5,22 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities.Entities;
 
-namespace AHDomain.Models
+namespace Domain.Models
 {
-    public class UserModel: ModelBase
+    public class UserModel : ModelBase
     {
         public UserModel(UserEntity entity)
         {
-            this.Id = entity.Id;
-            this.Name = entity.Name;
-            this.Family = entity.Family;
-            this.PhoneNo = entity.PhoneNo;
-            this.Username = entity.Username;
-            this.Password = entity.Password;
+            Id = entity.Id;
+            Name = entity.Name;
+            Family = entity.Family;
+            PhoneNo = entity.PhoneNo;
+            Username = entity.Username;
+            Password = entity.Password;
         }
 
         public UserModel(int id, string username, string password,
-            string? name = null , string? family = null , string? phoneNo = null)
+            string? name = null, string? family = null, string? phoneNo = null)
         {
             Id = id;
             Name = name ?? username;

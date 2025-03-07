@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities.Entities;
 
-namespace AHDomain.Models
+namespace Domain.Models
 {
-    public class AirPortModel: ModelBase
+    public class AirPortModel : ModelBase
     {
         public AirPortModel(AirPortEntity entity)
         {
-            this.Id =entity.Id;
-            this.AirPortName = entity.AirPortName;
+            Id = entity.Id;
+            AirPortName = entity.AirPortName;
         }
 
         public AirPortModel(int id, string airPortName)

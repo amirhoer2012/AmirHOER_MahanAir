@@ -1,16 +1,16 @@
-﻿using AHDomain.Models;
-using Domain.Contracts.DomainServices;
+﻿using Domain.Contracts.DomainServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Contracts.Repositories;
+using Domain.Repositories;
 using Entities.Entities;
+using Domain.Models;
 
 namespace Domain.DomainServices
 {
-    internal class ReservationDomainService : DomainServiceBase<ReservationModel,ReservationEntity, long>, IReservationDomainService
+    public class ReservationDomainService : DomainServiceBase<ReservationModel,ReservationEntity, long>, IReservationDomainService
     {
         private readonly IReservationRepository repository;
 

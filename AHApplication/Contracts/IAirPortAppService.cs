@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Models
+namespace Application.Contracts
 {
-    public class ModelBase
+    public interface IAirPortAppService
     {
     }
 }

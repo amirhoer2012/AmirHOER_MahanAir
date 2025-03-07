@@ -1,16 +1,11 @@
-﻿using AHDomain.Models;
-using Domain.Contracts.DomainServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.Contracts.Repositories;
+﻿using Domain.Contracts.DomainServices;
+using Domain.Repositories;
+using Domain.Models;
 using Entities.Entities;
 
 namespace Domain.DomainServices
 {
-    internal class UserDomainService : DomainServiceBase<UserModel,UserEntity, int>, IUserDomainService
+    public class UserDomainService : DomainServiceBase<UserModel,UserEntity, int>, IUserDomainService
     {
         private readonly IUserRepository repository;
 

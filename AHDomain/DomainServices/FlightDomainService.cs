@@ -1,16 +1,16 @@
-﻿using AHDomain.Models;
-using Domain.Contracts.DomainServices;
+﻿using Domain.Contracts.DomainServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Contracts.Repositories;
+using Domain.Repositories;
 using Entities.Entities;
+using Domain.Models;
 
 namespace Domain.DomainServices
 {
-    internal class FlightDomainService : DomainServiceBase<FlightModel, FlightEntity, long>, IFlightDomainService
+    public class FlightDomainService : DomainServiceBase<FlightModel, FlightEntity, long>, IFlightDomainService
     {
         private readonly IFlightRepository repository;
 

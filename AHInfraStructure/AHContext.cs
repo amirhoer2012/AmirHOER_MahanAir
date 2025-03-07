@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace AHInfraStructure
+namespace InfraStructure
 {
-    public class AHContext:DbContext
+    public class AHContext : DbContext
     {
         public AHContext(DbContextOptions<AHContext> options) : base(options)
         {
@@ -34,12 +34,12 @@ namespace AHInfraStructure
             modelBuilder.Entity<ReservationEntity>()
                 .HasOne(r => r.User)
                 .WithMany()
-                .HasForeignKey(r=>r.UserId);
+                .HasForeignKey(r => r.UserId);
 
             modelBuilder.Entity<ReservationEntity>()
                 .HasOne(r => r.Flight)
                 .WithMany()
-                .HasForeignKey(r=>r.FlightId);
+                .HasForeignKey(r => r.FlightId);
         }
     }
 }

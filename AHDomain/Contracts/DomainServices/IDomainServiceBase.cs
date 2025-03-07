@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AHDomain.Models;
+using Domain.Models;
 
-namespace Application.Contracts.DomainServices
+namespace Domain.Contracts.DomainServices
 {
-    public interface IDomainServiceBase<TModel,in TId>
+    public interface IDomainServiceBase<TModel, in TId>
     where TModel : ModelBase
     where TId : struct
     {
@@ -16,5 +16,7 @@ namespace Application.Contracts.DomainServices
         TModel Persist(TModel model);
 
         TModel Read(TId id);
+
+        void SaveChanges();
     }
 }

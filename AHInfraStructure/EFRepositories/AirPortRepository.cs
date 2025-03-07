@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AHDomain.Models;
-using Domain.Contracts.Repositories;
+using Domain.Repositories;
 using Entities.Entities;
+using InfraStructure;
 
-namespace AHInfraStructure.Repositories
+namespace InfraStructure.EFRepositories
 {
-    public class AirPortRepository : RepositoryBase< AirPortEntity, int>, IAirPortRepository
+    public class AirPortRepository : RepositoryBase<AirPortEntity, int>, IAirPortRepository
     {
         public AirPortRepository(AHContext context) : base(context)
         {

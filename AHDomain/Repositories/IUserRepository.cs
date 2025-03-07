@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities.Entities;
 
-namespace Domain.Contracts.Repositories
+namespace Domain.Repositories
 {
-    public interface IFlightRepository : IRepositoryBase<FlightEntity, long>
+    public interface IUserRepository : IRepositoryBase<UserEntity, int>
     {
     }
 }

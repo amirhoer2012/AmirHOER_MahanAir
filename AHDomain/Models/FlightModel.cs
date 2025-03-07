@@ -1,19 +1,17 @@
-﻿
+﻿using Entities.Entities;
 
-using Entities.Entities;
-
-namespace AHDomain.Models
+namespace Domain.Models
 {
-    public class FlightModel: ModelBase
+    public class FlightModel : ModelBase
     {
         public FlightModel(FlightEntity entity)
         {
-            this.Id = entity.Id;
-            this.Destination = new AirPortModel(entity.Destination);
-            this.Source = new AirPortModel(entity.Source);
-            this.DepartureTime = entity.DepartureTime;
-            this.PlaneName = entity.PlaneName;
-            this.AvailableSeats = entity.AvailableSeats;
+            Id = entity.Id;
+            Destination = new AirPortModel(entity.Destination);
+            Source = new AirPortModel(entity.Source);
+            DepartureTime = entity.DepartureTime;
+            PlaneName = entity.PlaneName;
+            AvailableSeats = entity.AvailableSeats;
         }
 
         public FlightModel(long id, string planeName, int sourceId, int destinationId, DateTime departureTime, int availableSeats)
@@ -26,12 +24,12 @@ namespace AHDomain.Models
             AvailableSeats = availableSeats;
         }
 
-        public void ChangeDestination(AirPortModel newDestination,DateTime? newDepartureTime = null)
+        public void ChangeDestination(AirPortModel newDestination, DateTime? newDepartureTime = null)
         {
-            this.Destination = newDestination;
+            Destination = newDestination;
             if (newDepartureTime != null)
             {
-                this.DepartureTime = (DateTime)newDepartureTime;
+                DepartureTime = (DateTime)newDepartureTime;
             }
         }
 

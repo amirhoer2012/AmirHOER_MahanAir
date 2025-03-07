@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using AHDomain.Models;
+using Domain.Repositories;
 using Domain.Contracts.DomainServices;
-using Domain.Contracts.Repositories;
+using Domain.Models;
 using Entities.Entities;
 
 namespace Domain.DomainServices
 {
-    internal class AirPortDomainService : DomainServiceBase<AirPortModel, AirPortEntity, int>, IAirPortDomainService
+    public class AirPortDomainService: DomainServiceBase<AirPortModel,AirPortEntity,int>,IAirPortDomainService
     {
         private readonly IAirPortRepository repository;
 

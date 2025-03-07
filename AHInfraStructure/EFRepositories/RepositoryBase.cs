@@ -1,7 +1,8 @@
 ﻿using Entities.Entities;
+using InfraStructure;
 using Microsoft.EntityFrameworkCore;
 
-namespace AHInfraStructure.Repositories
+namespace InfraStructure.EFRepositories
 {
     public abstract class RepositoryBase<TEntity, TId>
     where TEntity : AhEntityBase<TId>, new()
@@ -27,7 +28,7 @@ namespace AHInfraStructure.Repositories
             var existEntity = Read;
             if (existEntity != null)
             {
-               _dbSet.Update(model);
+                _dbSet.Update(model);
             }
             else
             {
@@ -38,7 +39,7 @@ namespace AHInfraStructure.Repositories
 
         public virtual TEntity Read(TId id)
         {
-           return _dbSet.SingleOrDefault(c => c.Id.Equals(id));
+            return _dbSet.SingleOrDefault(c => c.Id.Equals(id));
         }
 
         public void SaveChanges()

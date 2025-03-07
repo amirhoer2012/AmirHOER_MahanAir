@@ -1,6 +1,6 @@
-﻿using AHDomain.Models;
-using Application.Contracts.DomainServices;
-using Domain.Contracts.Repositories;
+﻿using Domain.Contracts.DomainServices;
+using Domain.Repositories;
+using Domain.Models;
 using Entities.Entities;
 
 namespace Domain.DomainServices

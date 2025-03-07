@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities.Entities;
 
-namespace Domain.Contracts.Repositories
+namespace Domain.Repositories
 {
-    public interface IReservationRepository : IRepositoryBase<ReservationEntity, long>
+    public interface IFlightRepository : IRepositoryBase<FlightEntity, long>
     {
     }
 }
